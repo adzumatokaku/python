@@ -4,7 +4,6 @@ import docker
 base_url = input('URL to the Docker server in form "http://ip:port" : \n')
 client = docker.DockerClient(base_url)
 if not client:
-    
     client = docker.from_env()
 if client.containers.list('status=exited'):
     print ('Warning! There are dead or stoped containers: \n')
